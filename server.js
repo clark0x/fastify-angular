@@ -1,12 +1,17 @@
 'use strict';
 
 import { join } from 'path';
+
+import { enableProdMode } from '@angular/core';
 // Common Engine
 import { ɵCommonEngine as CommonEngine, ɵRenderOptions as RenderOptions } from '@nguniversal/common/engine';
 // Import token
 import { ɵREQUEST as REQUEST, ɵRESPONSE as RESPONSE } from '@nguniversal/common/tokens';
 // Import module map for lazy loading
 import { provideModuleMap } from '@nguniversal/module-map-ngfactory-loader';
+
+// Faster server renders w/ Prod mode (dev mode never needed)
+enableProdMode();
 
 function fastifyAngularServer(instance, opts, next) {
   const locales = opts.locales || [''];

@@ -2,6 +2,12 @@
 # yarn lockfile v1
 
 
+"@angular/core@^6.0.0":
+  version "6.1.8"
+  resolved "https://registry.yarnpkg.com/@angular/core/-/core-6.1.8.tgz#2de584e184dc148a55ec153f8125acdf3e88eae6"
+  dependencies:
+    tslib "^1.9.0"
+
 "@nguniversal/common@^6.1.0":
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/@nguniversal/common/-/common-6.1.0.tgz#10e6bf8784f88d0fc43cdfe44e61a8de4d92a33c"
@@ -3092,6 +3098,10 @@ trivial-deferred@^1.0.1:
 tsame@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/tsame/-/tsame-2.0.0.tgz#4923c805cbd789775eca33b9d0c67b358a7d86a8"
+
+tslib@^1.9.0:
+  version "1.9.3"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
 
 tunnel-agent@^0.6.0:
   version "0.6.0"

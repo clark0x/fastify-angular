@@ -19,6 +19,7 @@
     "dev": "fastify start -l info -P app.js"
   },
   "dependencies": {
+    "@angular/core": "^6.0.0",
     "@nguniversal/common": "^6.1.0",
     "@nguniversal/module-map-ngfactory-loader": "^6.1.0",
     "fastify-language-parser": "^0.7.0",
@@ -35,7 +36,6 @@
     "@angular/animations": "^6.0.0",
     "@angular/common": "^6.0.0",
     "@angular/compiler": "^6.0.0",
-    "@angular/core": "^6.0.0",
     "@angular/forms": "^6.0.0",
     "@angular/http": "^6.0.0",
     "@angular/platform-browser": "^6.0.0",
