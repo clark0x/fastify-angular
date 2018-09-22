@@ -1,5 +1,8 @@
 'use strict';
 
+import 'zone.js/dist/zone-node';
+import 'reflect-metadata';
+
 import { join } from 'path';
 
 import { enableProdMode } from '@angular/core';
