@@ -1,6 +1,6 @@
 {
   "name": "fastify-angular",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Fastify plugin for angular universal project w/ multiple locales",
   "keywords": [
     "fastify",
