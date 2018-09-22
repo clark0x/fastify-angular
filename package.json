@@ -24,9 +24,7 @@
     "@nguniversal/module-map-ngfactory-loader": "^6.1.0",
     "fastify-language-parser": "^0.7.0",
     "fastify-plugin": "^1.2.0",
-    "fastify-static": "^0.14.0",
-    "reflect-metadata": "^0.1.12",
-    "zone.js": "^0.8.26"
+    "fastify-static": "^0.14.0"
   },
   "devDependencies": {
     "fastify": "^1.11.0",

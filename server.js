@@ -1,12 +1,11 @@
 'use strict';
 
-require('zone.js/dist/zone-node');
-require('reflect-metadata');
-
-const path = require('path');
-const join = path.join;
+const { join } = require('path');
 
 const { enableProdMode } = require('@angular/core');
+// Faster server renders w/ Prod mode (dev mode never needed)
+enableProdMode();
+
 // Common Engine
 const { ɵCommonEngine } = require('@nguniversal/common/engine');
 // Import token
@@ -16,10 +15,7 @@ const { provideModuleMap } = require('@nguniversal/module-map-ngfactory-loader')
 
 const [CommonEngine, REQUEST, RESPONSE] = [ɵCommonEngine, ɵREQUEST, ɵRESPONSE];
 
-// Faster server renders w/ Prod mode (dev mode never needed)
-enableProdMode();
-
-function fastifyAngularServer(instance, opts, next) {
+module.exports = function fastifyAngularServer(instance, opts, next) {
   const locales = opts.locales || [''];
   const engines = locales.reduce((result, locale) => {
     const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require(join(opts.server, locale, 'main'));
@@ -63,18 +59,4 @@ function fastifyAngularServer(instance, opts, next) {
   });
 
   next();
-}
-
-const fp = require('fastify-plugin');
-
-// the use of fastify-plugin is required to be able
-// to export the decorators to the outer scope
-
-module.exports = fp(fastifyAngularServer, {
-  fastify     : '1.x',
-  name        : 'fastify-angular-server',
-  decorators  : {
-    request: ['detectedLng'],
-  },
-  dependencies: ['fastify-language-parser'],
-});
+};
