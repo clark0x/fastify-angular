@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en" trgLang="en">
+  <file original="ng.template" id="ngi18n">
+    <unit id="2294911998501170674">
+      <notes>
+        <note category="location">app/app.component.html:1</note>
+      </notes>
+      <segment state="final">
+        <source>Universal Demo using Angular and Angular CLI</source>
+      <target>Universal Demo using Angular and Angular CLI</target></segment>
+    </unit>
+    <unit id="2821179408673282599">
+      <notes>
+        <note category="location">app/app.component.html:2</note>
+      </notes>
+      <segment state="final">
+        <source>Home</source>
+      <target>Home</target></segment>
+    </unit>
+    <unit id="8540986733881734625">
+      <notes>
+        <note category="location">app/app.component.html:3</note>
+      </notes>
+      <segment state="final">
+        <source>Lazy</source>
+      <target>Lazy</target></segment>
+    </unit>
+    <unit id="4234505867015776174">
+      <notes>
+        <note category="location">app/app.component.html:4</note>
+      </notes>
+      <segment state="final">
+        <source>Lazy_Nested</source>
+      <target>Lazy_Nested</target></segment>
+    </unit>
+  </file>
+</xliff>

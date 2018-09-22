@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en" trgLang="zh">
+  <file original="ng.template" id="ngi18n">
+    <unit id="2294911998501170674">
+      <notes>
+        <note category="location">app/app.component.html:1</note>
+      </notes>
+      <segment state="translated">
+        <source>Universal Demo using Angular and Angular CLI</source>
+      <target>使用 Angular 和 Angular CLI 的 Universal 例子</target></segment>
+    </unit>
+    <unit id="2821179408673282599">
+      <notes>
+        <note category="location">app/app.component.html:2</note>
+      </notes>
+      <segment state="translated">
+        <source>Home</source>
+      <target>首页</target></segment>
+    </unit>
+    <unit id="8540986733881734625">
+      <notes>
+        <note category="location">app/app.component.html:3</note>
+      </notes>
+      <segment state="translated">
+        <source>Lazy</source>
+      <target>懒加载</target></segment>
+    </unit>
+    <unit id="4234505867015776174">
+      <notes>
+        <note category="location">app/app.component.html:4</note>
+      </notes>
+      <segment state="translated">
+        <source>Lazy_Nested</source>
+      <target>嵌套懒加载</target></segment>
+    </unit>
+  </file>
+</xliff>

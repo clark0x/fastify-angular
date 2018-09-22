@@ -12,6 +12,5 @@ function fastifyAngularBrowser(instance, opts, next) {
 
 module.exports = fp(fastifyAngularBrowser, {
   fastify     : '1.x',
-  name        : 'fastify-angular-browser',
-  dependencies: ['fastify-static'],
+  name        : 'fastify-angular-browser'
 });

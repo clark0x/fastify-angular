@@ -1,17 +1,20 @@
 'use strict';
 
-import 'zone.js/dist/zone-node';
-import 'reflect-metadata';
+require('zone.js/dist/zone-node');
+require('reflect-metadata');
 
-import { join } from 'path';
+const path = require('path');
+const join = path.join;
 
-import { enableProdMode } from '@angular/core';
+const { enableProdMode } = require('@angular/core');
 // Common Engine
-import { ɵCommonEngine as CommonEngine, ɵRenderOptions as RenderOptions } from '@nguniversal/common/engine';
+const { ɵCommonEngine } = require('@nguniversal/common/engine');
 // Import token
-import { ɵREQUEST as REQUEST, ɵRESPONSE as RESPONSE } from '@nguniversal/common/tokens';
+const { ɵREQUEST, ɵRESPONSE } = require('@nguniversal/common/tokens');
 // Import module map for lazy loading
-import { provideModuleMap } from '@nguniversal/module-map-ngfactory-loader';
+const { provideModuleMap } = require('@nguniversal/module-map-ngfactory-loader');
+
+const [CommonEngine, REQUEST, RESPONSE] = [ɵCommonEngine, ɵREQUEST, ɵRESPONSE];
 
 // Faster server renders w/ Prod mode (dev mode never needed)
 enableProdMode();
@@ -41,7 +44,7 @@ function fastifyAngularServer(instance, opts, next) {
       url             : this.request.req.url,
       documentFilePath: join(opts.browser, this.request.locale, 'index.html'),
       providers       : [{ provide: REQUEST, useValue: this.request }, { provide: RESPONSE, useValue: this }],
-    } as RenderOptions;
+    };
 
     this.engine.render(options)
       .then(html =>
@@ -49,7 +52,7 @@ function fastifyAngularServer(instance, opts, next) {
       );
   });
 
-  if (opts.i18nParam) {
+  if (opts.i18nRoute) {
     instance.get(`/:${opts.i18nParam}/*`, (request, reply) => {
       reply.renderNG();
     });

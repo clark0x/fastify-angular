@@ -1,0 +1,10 @@
+{
+  "xliffmergeOptions": {
+    "srcDir": "src/locale",
+    "genDir": "src/locale",
+    "i18nFile": "messages.xlf",
+    "i18nFormat": "xlf2",
+    "defaultLanguage": "en",
+    "languages": ["en", "zh"]
+  }
+}

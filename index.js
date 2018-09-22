@@ -1,7 +1,7 @@
 'use strict';
 
-import { join } from 'path';
-import { existsSync, readdirSync, statSync } from 'fs';
+const { join } = require('path');
+const { existsSync, readdirSync, statSync } = require('fs');
 
 const fp = require('fastify-plugin');
 
@@ -60,7 +60,8 @@ function fastifyAngular(fastify, opts, next) {
       prefix   : `/`,
       browser  : opts.browser,
       server   : opts.server,
-      i18nParam: opts.i18n && opts.i18nParam || 'locale',
+      i18nRoute: opts.i18nRoute,
+      i18nParam: opts.i18nParam || 'lng',
       locales  : locales,
     });
   }
@@ -77,5 +78,5 @@ module.exports = fp(fastifyAngular, {
   decorators  : {
     request: ['detectedLng'],
   },
-  dependencies: ['fastify-static', 'fastify-language-parser'],
+  dependencies: ['fastify-language-parser'],
 });
