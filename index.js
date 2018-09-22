@@ -42,6 +42,7 @@ function fastifyAngular(fastify, opts, next) {
     locales.forEach((locale) => {
       fastify.register(fastifyAngularBrowser, {
         prefix : `/${locale}/`,
+        locale : locale,
         browser: join(opts.browser, locale),
       });
     });
