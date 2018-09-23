@@ -7,15 +7,16 @@ module.exports = function fastifyAngularBundle(fastify, opts, next) {
       browser: opts.browser,
     })
     .setNotFoundHandler((request, reply) => {
-      request.detectedLng = opts.locale;
-      if (reply.renderNG) {
-        reply.renderNG();
-      } else {
-        reply
-          .code(404)
-          .type('text/html')
-          .sendFile(join(opts.browser, 'index.html'))
-        ;
+      switch(request.type(['text', 'image', 'html'])) {
+        case 'html':
+          request.detectedLng = opts.locale;
+          reply.renderNG
+            ? reply.renderNG()
+            : reply.code(404).type('text/html').sendFile(join(opts.browser, 'index.html'));
+          break;
+        default:
+          reply.code(404).send('');
+          break;
       }
     });
   next();
