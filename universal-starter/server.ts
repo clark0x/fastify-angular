@@ -1,26 +1,34 @@
-import * as fastify               from 'fastify';
-import * as fastifyAngular        from 'fastify-angular';
-import * as fastifyLanguageParser from 'fastify-language-parser';
+import 'zone.js/dist/zone-node';
+import 'reflect-metadata';
+
+import * as fastify       from 'fastify';
+import { enableProdMode } from '@angular/core';
+
+// Faster server renders w/ Prod mode (dev mode never needed)
+enableProdMode();
 
 const PORT = +process.env.PORT || 4000;
 
 // Fastify server
 const app = fastify({
-  logger: true,
+  logger             : {
+    level: 'error',
+  },
+  trustProxy         : true,
+  ignoreTrailingSlash: true,
 });
 
 app
-  .register(fastifyLanguageParser, {
-    order        : ['path', 'header'],
+  .register(require('fastify-accepts'))
+  .register(require('fastify-language-parser'), {
+    order        : ['header'],
     fallbackLng  : 'en',
     supportedLngs: ['zh', 'en'],
-    pathParam    : 'locale',
   })
-  .register(fastifyAngular, {
+  .register(require('fastify-angular'), {
     dist     : __dirname,
     i18n     : true,
     universal: true,
-    i18nRoute: true,
   })
   .listen(PORT, (err, address) => {
     if (err) {
