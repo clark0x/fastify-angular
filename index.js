@@ -44,12 +44,12 @@ function fastifyAngular(fastify, opts, next) {
     ;
 
     fastify
-      .register(require('./plugins/render'), {
-        browser: opts.browser,
-      })
       .register(require('./plugins/engine'), {
         server : opts.server,
         locales: locales,
+      })
+      .register(require('./plugins/render'), {
+        browser: opts.browser,
       })
       .register(fastifyAngularServer, {
         prefix   : '/',
@@ -69,8 +69,4 @@ const fp = require('fastify-plugin');
 module.exports = fp(fastifyAngular, {
   fastify     : '1.x',
   name        : 'fastify-angular',
-  decorators  : {
-    request: ['detectedLng'],
-  },
-  dependencies: ['fastify-language-parser'],
 });

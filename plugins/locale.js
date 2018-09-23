@@ -19,8 +19,4 @@ const fp = require('fastify-plugin');
 module.exports = fp(fastifyAngularLocale, {
   fastify     : '1.x',
   name        : 'fastify-angular-locale',
-  decorators  : {
-    request: ['detectedLng'],
-  },
-  dependencies: ['fastify-language-parser'],
 });

@@ -36,5 +36,5 @@ module.exports = fp(fastifyAngularRender, {
   decorators  : {
     fastify: ['engine'],
   },
-  dependencies: ['fastify-language-engine'],
+  dependencies: ['fastify-angular-engine'],
 });
