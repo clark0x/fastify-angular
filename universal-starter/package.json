@@ -52,7 +52,6 @@
     "@ngx-translate/i18n-polyfill": "^1.0.0",
     "core-js": "^2.4.1",
     "fastify": "^1.11.2",
-    "fastify-angular": "file:../",
     "fastify-language-parser": "^0.7.0",
     "fastify-static": "^0.14.0",
     "rxjs": "^6.2.2",

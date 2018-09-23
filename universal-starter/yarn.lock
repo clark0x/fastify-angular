@@ -209,17 +209,9 @@
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/@nguniversal/common/-/common-6.0.0.tgz#50e4b80d08618064e3404306b24b97877db9007d"
 
-"@nguniversal/common@^6.1.0":
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/@nguniversal/common/-/common-6.1.0.tgz#10e6bf8784f88d0fc43cdfe44e61a8de4d92a33c"
-
 "@nguniversal/module-map-ngfactory-loader@^6.0.0":
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/@nguniversal/module-map-ngfactory-loader/-/module-map-ngfactory-loader-6.0.0.tgz#0dd26c3f1c26d17bb21b8dfc0da53d82b7f11028"
-
-"@nguniversal/module-map-ngfactory-loader@^6.1.0":
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/@nguniversal/module-map-ngfactory-loader/-/module-map-ngfactory-loader-6.1.0.tgz#49eb65ed4dc3a3273c920b905e0925e0ed2fbcb8"
 
 "@ngx-translate/i18n-polyfill@^1.0.0":
   version "1.0.0"
@@ -1914,18 +1906,6 @@ fast-levenshtein@~2.0.4:
 fast-safe-stringify@^1.0.8, fast-safe-stringify@^1.2.3:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/fast-safe-stringify/-/fast-safe-stringify-1.2.3.tgz#9fe22c37fb2f7f86f06b8f004377dbf8f1ee7bc1"
-
-"fastify-angular@file:..":
-  version "0.0.2"
-  dependencies:
-    "@angular/core" "^6.0.0"
-    "@nguniversal/common" "^6.1.0"
-    "@nguniversal/module-map-ngfactory-loader" "^6.1.0"
-    fastify-language-parser "^0.7.0"
-    fastify-plugin "^1.2.0"
-    fastify-static "^0.14.0"
-    reflect-metadata "^0.1.12"
-    zone.js "^0.8.26"
 
 fastify-language-parser@^0.7.0:
   version "0.7.0"
@@ -4348,7 +4328,7 @@ redent@^1.0.0:
     indent-string "^2.1.0"
     strip-indent "^1.0.1"
 
-reflect-metadata@^0.1.10, reflect-metadata@^0.1.12, reflect-metadata@^0.1.2:
+reflect-metadata@^0.1.10, reflect-metadata@^0.1.2:
   version "0.1.12"
   resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.12.tgz#311bf0c6b63cd782f228a81abe146a2bfa9c56f2"
 
