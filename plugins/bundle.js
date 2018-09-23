@@ -1,7 +1,7 @@
 'use strict';
 
 function fastifyAngularBundle(fastify, opts, next) {
-  fastify.register(require('./browser'), { prefix: '/', root: opts.browser });
+  fastify.register(require('./browser'), { prefix: '/', browser: opts.browser });
 
   fastify.setNotFoundHandler((request, reply) => {
     if (reply.renderNG) {
