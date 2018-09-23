@@ -1,6 +1,6 @@
 'use strict';
 
-function fastifyAngularBundle(fastify, opts, next) {
+module.exports = function fastifyAngularBundle(fastify, opts, next) {
   fastify.register(require('./browser'), { prefix: '/', browser: opts.browser });
 
   fastify.setNotFoundHandler((request, reply) => {
@@ -16,14 +16,4 @@ function fastifyAngularBundle(fastify, opts, next) {
     }
   });
   next();
-}
-
-const fp = require('fastify-plugin');
-
-// the use of fastify-plugin is required to be able
-// to export the decorators to the outer scope
-
-module.exports = fp(fastifyAngularBundle, {
-  fastify     : '1.x',
-  name        : 'fastify-angular-bundle',
-});
+};
