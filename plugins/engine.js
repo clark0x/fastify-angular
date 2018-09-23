@@ -1,6 +1,7 @@
 'use strict';
 
 const { join } = require('path');
+const { existsSync, readdirSync, statSync } = require('fs');
 
 // Common Engine
 const { ɵCommonEngine } = require('@nguniversal/common/engine');
@@ -10,7 +11,16 @@ const { provideModuleMap } = require('@nguniversal/module-map-ngfactory-loader')
 const [CommonEngine] = [ɵCommonEngine];
 
 function fastifyAngularEngine(fastify, opts, next) {
-  const locales = opts.locales || [''];
+  const locales = !opts.i18n ? [''] : readdirSync(opts.server)
+    .filter(name => existsSync(join(opts.server, name)) && statSync(join(opts.server, name)).isDirectory())
+    .filter(name => existsSync(join(opts.server, name)) && statSync(join(opts.server, name, 'main.js')).isFile())
+  ;
+
+  fastify.decorate('supportedServerLocales', {
+    getter() {
+      return locales;
+    },
+  });
 
   const engines = locales.reduce((result, locale) => {
     const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require(join(opts.server, locale, 'main'));
@@ -18,7 +28,7 @@ function fastifyAngularEngine(fastify, opts, next) {
     return result;
   }, {});
 
-  fastify.decorate('engine', {
+  fastify.decorateReply('engine', {
     getter() {
       return engines[this.request.locale];
     },
@@ -35,8 +45,4 @@ const fp = require('fastify-plugin');
 module.exports = fp(fastifyAngularEngine, {
   fastify     : '1.x',
   name        : 'fastify-angular-engine',
-  decorators  : {
-    request: ['locale'],
-  },
-  dependencies: ['fastify-angular-locale'],
 });

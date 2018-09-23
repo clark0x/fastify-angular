@@ -16,7 +16,7 @@ function fastifyAngularRender(fastify, opts, next) {
       providers       : [{ provide: REQUEST, useValue: this.request }, { provide: RESPONSE, useValue: this }],
     };
 
-    fastify.engine.render(options)
+    this.engine.render(options)
       .then(html =>
         this.type('text/html').code(200).send(html),
       );
@@ -34,7 +34,7 @@ module.exports = fp(fastifyAngularRender, {
   fastify     : '1.x',
   name        : 'fastify-angular-render',
   decorators  : {
-    fastify: ['engine'],
+    reply: ['engine'],
   },
   dependencies: ['fastify-angular-engine'],
 });

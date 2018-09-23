@@ -1,17 +1,9 @@
 'use strict';
 
 function fastifyAngularServer(instance, opts, next) {
-
-  if (opts.i18nRoute) {
-    instance.get(`/:${opts.i18nParam}/*`, (request, reply) => {
-      reply.renderNG();
-    });
-  }
-
   instance.get('/*', (request, reply) => {
     reply.renderNG();
   });
-
   next();
 }
 
@@ -26,5 +18,5 @@ module.exports = fp(fastifyAngularServer, {
   decorators  : {
     reply: ['renderNG'],
   },
-  dependencies: ['fastify-angular-engine'],
+  dependencies: ['fastify-angular-render'],
 });
