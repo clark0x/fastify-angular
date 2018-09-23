@@ -26,5 +26,4 @@ const fp = require('fastify-plugin');
 module.exports = fp(fastifyAngularBundle, {
   fastify     : '1.x',
   name        : 'fastify-angular-bundle',
-  dependencies: ['fastify-angular-browser'],
 });

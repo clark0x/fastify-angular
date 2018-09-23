@@ -72,5 +72,5 @@ module.exports = fp(fastifyAngular, {
   decorators  : {
     request: ['detectedLng'],
   },
-  dependencies: ['fastify-static', 'fastify-language-parser'],
+  dependencies: ['fastify-language-parser'],
 });
