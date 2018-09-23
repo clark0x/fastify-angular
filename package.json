@@ -19,6 +19,7 @@
     "dev": "fastify start -l info -P app.js"
   },
   "dependencies": {
+    "@angular/common": "^6.0.0",
     "@nguniversal/common": "^6.1.0",
     "@nguniversal/module-map-ngfactory-loader": "^6.1.0",
     "fastify-plugin": "^1.2.0",
@@ -32,7 +33,6 @@
   },
   "peerDependencies": {
     "@angular/animations": "^6.0.0",
-    "@angular/common": "^6.0.0",
     "@angular/compiler": "^6.0.0",
     "@angular/core": "^6.0.0",
     "@angular/forms": "^6.0.0",

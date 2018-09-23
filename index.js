@@ -27,6 +27,9 @@ function fastifyAngular(fastify, opts, next) {
 
   if (opts.universal) {
     fastify
+      .register(require('./plugins/origin'), {
+        origin: opts.origin,
+      })
       .register(require('./plugins/engine'), {
         i18n  : opts.i18n,
         server: opts.server,

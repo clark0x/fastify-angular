@@ -3,6 +3,7 @@
 const { join } = require('path');
 
 // Import token
+const { APP_BASE_HREF } = require('@angular/common');
 const { ɵREQUEST, ɵRESPONSE } = require('@nguniversal/common/tokens');
 
 const [REQUEST, RESPONSE] = [ɵREQUEST, ɵRESPONSE];
@@ -11,9 +12,13 @@ function fastifyAngularRender(fastify, opts, next) {
 
   fastify.decorateReply('renderNG', function () {
     const options = {
-      url             : this.request.req.url,
+      url             : this.request.req.url.replace(new RegExp(`^/${this.request.locale}/`, 'i'), '/'),
       documentFilePath: join(opts.browser, this.request.locale, 'index.html'),
-      providers       : [{ provide: REQUEST, useValue: this.request }, { provide: RESPONSE, useValue: this }],
+      providers       : [
+        { provide: REQUEST, useValue: this.request },
+        { provide: RESPONSE, useValue: this },
+        { provide: APP_BASE_HREF, useValue: fastify.origin },
+      ],
     };
 
     this.engine.render(options)
@@ -34,7 +39,8 @@ module.exports = fp(fastifyAngularRender, {
   fastify     : '1.x',
   name        : 'fastify-angular-render',
   decorators  : {
-    reply: ['engine'],
+    fastify: ['origin'],
+    reply  : ['engine'],
   },
-  dependencies: ['fastify-angular-engine'],
+  dependencies: ['fastify-angular-origin', 'fastify-angular-engine'],
 });

@@ -1,7 +1,7 @@
 'use strict';
 
-function fastifyAngularServer(instance, opts, next) {
-  instance.get('/*', (request, reply) => {
+function fastifyAngularServer(fastify, opts, next) {
+  fastify.get('/*', (request, reply) => {
     reply.renderNG();
   });
   next();

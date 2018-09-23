@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@angular/core@^6.0.0":
+"@angular/common@^6.0.0":
   version "6.1.8"
-  resolved "https://registry.yarnpkg.com/@angular/core/-/core-6.1.8.tgz#2de584e184dc148a55ec153f8125acdf3e88eae6"
+  resolved "https://registry.yarnpkg.com/@angular/common/-/common-6.1.8.tgz#e9106cecd448f24e3a553a6ea9431e113fe3becd"
   dependencies:
     tslib "^1.9.0"
 
@@ -38,10 +38,6 @@ abbrev@1:
 abstract-logging@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/abstract-logging/-/abstract-logging-1.0.0.tgz#8b7deafd310559bc28f77724dd1bb30177278c1b"
-
-accept-language-parser@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/accept-language-parser/-/accept-language-parser-1.5.0.tgz#8877c54040a8dcb59e0a07d9c1fde42298334791"
 
 ajv@^5.3.0:
   version "5.5.2"
@@ -904,13 +900,6 @@ fastify-cli@^0.22.1:
     pump "^3.0.0"
     resolve-from "^4.0.0"
     update-notifier "^2.4.0"
-
-fastify-language-parser@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/fastify-language-parser/-/fastify-language-parser-0.7.0.tgz#52de8f995b55518a9f22a86fa1a8c5e1e8079ea1"
-  dependencies:
-    accept-language-parser "^1.5.0"
-    fastify-plugin "^1.2.0"
 
 fastify-plugin@^1.2.0:
   version "1.2.1"
