@@ -26,5 +26,5 @@ module.exports = fp(fastifyAngularServer, {
   decorators  : {
     reply: ['renderNG'],
   },
-  dependencies: ['fastify-language-engine'],
+  dependencies: ['fastify-angular-engine'],
 });

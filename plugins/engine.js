@@ -38,5 +38,5 @@ module.exports = fp(fastifyAngularEngine, {
   decorators  : {
     request: ['locale'],
   },
-  dependencies: ['fastify-language-locale'],
+  dependencies: ['fastify-angular-locale'],
 });
