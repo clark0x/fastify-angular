@@ -3,12 +3,11 @@ Fastify plugin for angular universal project w/ multiple locales.
 
 ## Install
 
-``
+```
 yarn add fastify-angular
 or
 npm install --save fastify-angular
-
-``
+```
 
 ## Usage
 
