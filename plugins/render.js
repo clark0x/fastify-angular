@@ -12,7 +12,7 @@ function fastifyAngularRender(fastify, opts, next) {
 
   fastify.decorateReply('renderNG', function () {
     const options = {
-      url             : this.request.req.url.replace(new RegExp(`^/${this.request.locale}/`, 'i'), '/'),
+      url             : this.request.req.url.replace(`/${this.request.locale}/`, '/'),
       documentFilePath: join(opts.browser, this.request.locale, 'index.html'),
       providers       : [
         { provide: REQUEST, useValue: this.request },

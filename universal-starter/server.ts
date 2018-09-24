@@ -10,13 +10,7 @@ enableProdMode();
 const PORT = +process.env.PORT || 4000;
 
 // Fastify server
-const app = fastify({
-  logger             : {
-    level: 'error',
-  },
-  trustProxy         : true,
-  ignoreTrailingSlash: true,
-});
+const app = fastify();
 
 app
   .register(require('fastify-accepts'))
@@ -35,5 +29,4 @@ app
       throw err;
     }
     console.log(`Node Fastify server listening on ${address}`);
-    console.log(app.printRoutes());
   });
