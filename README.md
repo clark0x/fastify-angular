@@ -13,7 +13,7 @@ npm install --save fastify-angular
 
 Follow [angular/universal-starter](https://github.com/angular/universal-starter). Replace `server.ts` with following code.
 
-```
+```js
 import 'zone.js/dist/zone-node';
 import 'reflect-metadata';
 
