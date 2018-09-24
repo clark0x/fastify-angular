@@ -59,21 +59,8 @@ Default to `false`.
 - `server` _string_, _optional_. server folder for server side build.
 - `origin` _string_, _optional_. Server origin which will be passed to angular as `APP_BASE_HREF`. Default to server address which determined after server started. e.g.: `http://127.0.0.1:4000`.
 
-### Practical NPM Scripts
+## Recommend Dist Structure
 
-#### Scripts for Build
-
-Use following scripts to build angular universal for multiple locales.
-```
-"build:ssr": "yarn build:bundle && yarn compile:server",
-"compile:server": "tsc -p server.tsconfig.json",
-"build:bundle": "DIST=dist CONF=production yarn build:i18n",
-"build:i18n": "for lang in zh en; do LANG=$lang CONF=${CONF} DIST=${DIST} yarn build:lang:bundle; if [ $? -ne 0 ]; then echo ERROR; exit 666; fi; done",
-"build:lang:bundle": "LANG=${LANG} CONF=${CONF} DIST=${DIST} yarn build:lang:browser && LANG=${LANG} CONF=${CONF} DIST=${DIST} yarn build:lang:server",
-"build:lang:browser": "yarn build --configuration ${CONF} --output-path ${DIST}/browser/${LANG} --i18n-file src/locale/messages.${LANG}.xlf --i18n-locale ${LANG} --base-href /${LANG}/ ",
-"build:lang:server": "ng run ng-universal-demo:server:${CONF} --output-path ${DIST}/server/${LANG}  --i18n-file src/locale/messages.${LANG}.xlf --i18n-locale ${LANG}",
-```
-`yarn build:ssr` will create dist folder like this:
 ```
 dist
   |- browser
@@ -92,6 +79,22 @@ dist
   |- server.js
   |- static.paths.js
 ```
+
+### Useful NPM Scripts
+
+#### Scripts for Build
+
+Use following scripts to build angular universal for multiple locales.
+```
+"build:ssr": "yarn build:bundle && yarn compile:server",
+"compile:server": "tsc -p server.tsconfig.json",
+"build:bundle": "DIST=dist CONF=production yarn build:i18n",
+"build:i18n": "for lang in zh en; do LANG=$lang CONF=${CONF} DIST=${DIST} yarn build:lang:bundle; if [ $? -ne 0 ]; then echo ERROR; exit 666; fi; done",
+"build:lang:bundle": "LANG=${LANG} CONF=${CONF} DIST=${DIST} yarn build:lang:browser && LANG=${LANG} CONF=${CONF} DIST=${DIST} yarn build:lang:server",
+"build:lang:browser": "yarn build --configuration ${CONF} --output-path ${DIST}/browser/${LANG} --i18n-file src/locale/messages.${LANG}.xlf --i18n-locale ${LANG} --base-href /${LANG}/ ",
+"build:lang:server": "ng run ng-universal-demo:server:${CONF} --output-path ${DIST}/server/${LANG}  --i18n-file src/locale/messages.${LANG}.xlf --i18n-locale ${LANG}",
+```
+`yarn build:ssr` will create dist folder as recommended above.
 
 #### Scripts for Extract i18n
 
