@@ -55,12 +55,9 @@ This plugin allow you to specify options:
 - `universal` _boolean_, _optional_. `true` if this is an universal project (there will be a browser folder and a server folder under dist
 folder).
 Default to `false`.
-- browser _string_, _optional_. browser folder for client side build.
-- server _string_, _optional_. server folder for server side build.
-- origin _string_, _optional_. Server origin which will be passed to angular as `APP_BASE_HREF`. Default to server address, determine at runtime, e.g
-.:
-`http://127.0.0
-.1:4000`.
+- `browser` _string_, _optional_. browser folder for client side build.
+- `server` _string_, _optional_. server folder for server side build.
+- `origin` _string_, _optional_. Server origin which will be passed to angular as `APP_BASE_HREF`. Default to server address which determined after server started. e.g.: `http://127.0.0.1:4000`.
 
 ### Practical NPM Scripts
 
