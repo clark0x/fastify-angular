@@ -1,7 +1,7 @@
 import { LOCALE_ID, MissingTranslationStrategy, TRANSLATIONS, TRANSLATIONS_FORMAT } from '@angular/core';
 import { platformBrowserDynamic }                                                   from '@angular/platform-browser-dynamic';
 
-import { AppModule } from '@app/app.module';
+import { AppModule } from '../../app/app.module';
 
 const LOCALE = 'zh';
 

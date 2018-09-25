@@ -2,4 +2,4 @@
 yarn.lock
 .idea
 node_modules
-universal-starter
+packages/universal-starter

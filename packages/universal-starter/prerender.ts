@@ -9,9 +9,9 @@ import {enableProdMode} from '@angular/core';
 enableProdMode();
 
 // Import module map for lazy loading
-import {provideModuleMap} from '@nguniversal/module-map-ngfactory-loader';
+import {provideModuleMap}    from '@nguniversal/module-map-ngfactory-loader';
 import {renderModuleFactory} from '@angular/platform-server';
-import {ROUTES} from './static.paths';
+import {ROUTES}              from './static.paths';
 
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
 const {AppServerModuleNgFactory, LAZY_MODULE_MAP} = require('./server/main');
