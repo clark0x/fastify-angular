@@ -1,4 +1,7 @@
 # fastify-angular
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/clarkorz/fastify-angular.svg)](https://greenkeeper.io/)
+
 Fastify plugin for angular universal project w/ multiple locales.
 
 ## Install
