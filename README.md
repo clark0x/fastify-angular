@@ -53,7 +53,7 @@ app
 
 This plugin allow you to specify options:
 
-- `dist` _required_. The `dist` folder path for angular output. For the recommended dist structure, `__dirname` should work.
+- `dist` _optional_. The `dist` folder path for angular output. For the recommended dist structure, `__dirname` should work. Default to `${process.pwd()}/dist`.
 - `i18n` _boolean_, _optional_. `true` for i18n project (multiple builds for each locale). Default to `false`.
 - `universal` _boolean_, _optional_. `true` if this is an universal project (there will be a browser folder and a server folder under dist
 folder).
