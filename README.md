@@ -85,7 +85,7 @@ dist
 
 ### Useful NPM Scripts
 
-#### Scripts for Build
+#### Scripts for [Build for Multiple Locales]((https://angular.io/guide/i18n#build-for-multiple-locales))
 
 Use following scripts to build angular universal for multiple locales.
 ```
