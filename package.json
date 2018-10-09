@@ -19,7 +19,7 @@
     "dev": "fastify start -l info -P app.js"
   },
   "devDependencies": {
-    "lerna": "^3.4.0"
+    "lerna": "^3.4.2"
   },
   "workspaces": [
     "packages/*"
