@@ -19,9 +19,9 @@
     "dev": "fastify start -l info -P app.js"
   },
   "dependencies": {
-    "@angular/common": "^6.0.0",
-    "@nguniversal/common": "^6.1.0",
-    "@nguniversal/module-map-ngfactory-loader": "^6.1.0",
+    "@angular/common": "^6.0.0 || ^7.0.0",
+    "@nguniversal/common": "^6.1.0 || ^7.0.0",
+    "@nguniversal/module-map-ngfactory-loader": "^6.1.0 || ^7.0.0",
     "fastify-plugin": "^1.2.0",
     "fastify-static": "^0.14.0"
   },
@@ -32,15 +32,15 @@
     "tap": "^12.0.0"
   },
   "peerDependencies": {
-    "@angular/animations": "^6.0.0",
-    "@angular/compiler": "^6.0.0",
-    "@angular/core": "^6.0.0",
-    "@angular/forms": "^6.0.0",
-    "@angular/http": "^6.0.0",
-    "@angular/platform-browser": "^6.0.0",
-    "@angular/platform-browser-dynamic": "^6.0.0",
-    "@angular/router": "^6.0.0",
+    "@angular/animations": "^6.0.0 || ^7.0.0",
+    "@angular/compiler": "^6.0.0 || ^7.0.0",
+    "@angular/core": "^6.0.0 || ^7.0.0",
+    "@angular/forms": "^6.0.0 || ^7.0.0",
+    "@angular/http": "^6.0.0 || ^7.0.0",
+    "@angular/platform-browser": "^6.0.0 || ^7.0.0",
+    "@angular/platform-browser-dynamic": "^6.0.0 || ^7.0.0",
+    "@angular/router": "^6.0.0 || ^7.0.0",
     "fastify": "^1.5.0",
-    "rxjs": "^6.2.0"
+    "rxjs": "^6.2.0 || ^6.3.0"
   }
 }

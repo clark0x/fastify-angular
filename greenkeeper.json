@@ -3,7 +3,8 @@
     "default": {
       "packages": [
         "package.json",
-        "universal-starter/package.json"
+        "fastify-angular/package.json",
+        "test-app/package.json"
       ]
     }
   }
