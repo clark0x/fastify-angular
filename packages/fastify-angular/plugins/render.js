@@ -3,10 +3,9 @@
 const { join } = require('path');
 
 // Import token
-const { APP_BASE_HREF } = require('@angular/common');
-const { ɵREQUEST, ɵRESPONSE } = require('@nguniversal/common/tokens');
+const { ɵREQUEST, ɵRESPONSE, ɵORIGIN_URL } = require('@nguniversal/common/tokens');
 
-const [REQUEST, RESPONSE] = [ɵREQUEST, ɵRESPONSE];
+const [REQUEST, RESPONSE, ORIGIN_URL] = [ɵREQUEST, ɵRESPONSE, ɵORIGIN_URL];
 
 function fastifyAngularRender(fastify, opts, next) {
 
@@ -17,7 +16,7 @@ function fastifyAngularRender(fastify, opts, next) {
       providers       : [
         { provide: REQUEST, useValue: this.request },
         { provide: RESPONSE, useValue: this },
-        { provide: APP_BASE_HREF, useValue: fastify.origin },
+        { provide: ORIGIN_URL, useValue: fastify.origin },
       ],
     };
 
