@@ -2,7 +2,6 @@
 
 const { join } = require('path');
 
-// Import token
 const { ɵREQUEST, ɵRESPONSE, ɵORIGIN_URL } = require('@nguniversal/common/tokens');
 
 const [REQUEST, RESPONSE, ORIGIN_URL] = [ɵREQUEST, ɵRESPONSE, ɵORIGIN_URL];
