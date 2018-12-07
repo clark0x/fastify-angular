@@ -9,6 +9,7 @@ module.exports = function fastifyAngularBundle(fastify, opts, next) {
     .setNotFoundHandler((request, reply) => {
       switch(request.type(['text', 'image', 'html'])) {
         case 'html':
+        case 'text':
           request.detectedLng = opts.locale;
           reply.renderNG
             ? reply.renderNG()
