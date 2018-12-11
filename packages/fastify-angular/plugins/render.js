@@ -21,7 +21,7 @@ function fastifyAngularRender(fastify, opts, next) {
 
     this.engine.render(options)
       .then(html =>
-        this.type('text/html').code(200).send(html),
+        this.type('text/html').send(html),
       );
   });
 
