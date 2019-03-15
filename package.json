@@ -29,7 +29,7 @@
     "@angular/platform-browser-dynamic": "^7.0.0",
     "@angular/platform-server": "^7.0.0",
     "@angular/router": "^7.0.0",
-    "fastify": "^1.12.0",
+    "fastify": "^2.1.0",
     "lerna": "^3.4.0",
     "rxjs": "^6.3.3",
     "zone.js": "^0.8.26"
