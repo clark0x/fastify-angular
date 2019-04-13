@@ -49,7 +49,7 @@ const fp = require('fastify-plugin');
 // to export the decorators to the outer scope
 
 module.exports = fp(fastifyAngular, {
-  fastify     : '1.x',
+  fastify     : '2.x',
   name        : 'fastify-angular',
   dependencies: ['fastify-accepts'],
 });
