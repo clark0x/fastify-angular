@@ -14,15 +14,7 @@ function fastifyAngular(fastify, opts, next) {
     .register(require('./plugins/locale'), {
       browser: opts.browser,
       i18n   : opts.i18n,
-    })
-    .after(() => {
-      fastify.supportedBrowserLocales.forEach((locale) => {
-        fastify.register(fastifyAngularBundle, {
-          prefix : locale ? `/${locale}/` : '/',
-          locale : locale,
-          browser: join(opts.browser, locale),
-        });
-      });
+      bundle : fastifyAngularBundle,
     });
 
   if (opts.universal) {

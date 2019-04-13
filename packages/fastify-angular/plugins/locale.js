@@ -23,6 +23,14 @@ function fastifyAngularLocale(fastify, opts, next) {
     },
   });
 
+  locales.forEach((locale) => {
+    fastify.register(opts.bundle, {
+      prefix : locale ? `/${locale}/` : '/',
+      locale : locale,
+      browser: join(opts.browser, locale),
+    });
+  });
+
   next();
 }
 
