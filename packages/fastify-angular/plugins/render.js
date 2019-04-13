@@ -34,7 +34,7 @@ const fp = require('fastify-plugin');
 // to export the decorators to the outer scope
 
 module.exports = fp(fastifyAngularRender, {
-  fastify     : '1.x',
+  fastify     : '2.x',
   name        : 'fastify-angular-render',
   decorators  : {
     fastify: ['origin'],

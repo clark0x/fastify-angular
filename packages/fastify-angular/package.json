@@ -19,15 +19,26 @@
     "dev": "fastify start -l info -P app.js"
   },
   "dependencies": {
-    "@angular/common": ">=6.0.0",
+    "@angular/animations": ">=7.0.0",
+    "@angular/common": ">=7.0.0",
+    "@angular/compiler": ">=7.0.0",
+    "@angular/core": ">=7.0.0",
+    "@angular/forms": ">=7.0.0",
+    "@angular/http": ">=7.0.0",
+    "@angular/platform-browser": ">=7.0.0",
+    "@angular/platform-browser-dynamic": ">=7.0.0",
+    "@angular/platform-server": ">=7.0.0",
+    "@angular/router": ">=7.0.0",
     "@nguniversal/common": ">=6.0.0",
     "@nguniversal/module-map-ngfactory-loader": ">=6.0.0",
+    "fastify": ">=2.1.0",
     "fastify-plugin": ">=1.2.0",
-    "fastify-static": ">=0.14.0"
+    "fastify-static": ">=0.14.0",
+    "lerna": "^3.13.0"
   },
   "devDependencies": {
-    "fastify": "^2.1.0",
-    "fastify-autoload": "^0.6.0",
+    "fastify": ">=2.1.0",
+    "fastify-autoload": "^0.7.0",
     "fastify-cli": "^1.0.0",
     "tap": "^12.6.0"
   },
